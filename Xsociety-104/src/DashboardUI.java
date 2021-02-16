@@ -86,6 +86,8 @@ public class DashboardUI extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1000, 600));
 
         BaseUI.setBackground(new java.awt.Color(250, 208, 90));
+        BaseUI.setAlignmentX(89.0F);
+        BaseUI.setAlignmentY(89.0F);
         BaseUI.setPreferredSize(new java.awt.Dimension(1000, 600));
 
         options.setBackground(new java.awt.Color(7, 95, 99));
@@ -252,7 +254,7 @@ public class DashboardUI extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(BaseUILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(BaseUILayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
                         .addComponent(jLabel2)
                         .addGap(2, 2, 2)
                         .addComponent(jLabel3)

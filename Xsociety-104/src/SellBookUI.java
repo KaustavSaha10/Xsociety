@@ -112,7 +112,7 @@ public class SellBookUI extends javax.swing.JFrame {
         HomeB.setBorder(null);
         HomeB.setPreferredSize(new java.awt.Dimension(50, 50));
         HomeB.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void MouseClicked(java.awt.event.MouseEvent evt) {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 HomeBMouseClicked(evt);
             }           
         });
@@ -123,7 +123,7 @@ public class SellBookUI extends javax.swing.JFrame {
         HomeB1.setBorder(null);
         HomeB1.setPreferredSize(new java.awt.Dimension(90, 90));
         HomeB1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void MouseClicked(java.awt.event.MouseEvent evt) {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 HomeB1MouseClicked(evt);
             }           
         });
@@ -133,10 +133,11 @@ public class SellBookUI extends javax.swing.JFrame {
         HomeB2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/shop.png"))); // NOI18N
         HomeB2.setBorder(null);
         HomeB2.setPreferredSize(new java.awt.Dimension(90, 90));
+       
         HomeB2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void MouseClicked(java.awt.event.MouseEvent evt) {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 HomeB2MouseClicked(evt);
-            }           
+            }
         });
 
         HomeB3.setBackground(new java.awt.Color(7, 95, 99));
@@ -355,7 +356,22 @@ public class SellBookUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    private void HomeBMouseClicked(java.awt.event.MouseEvent evt) { 
+        // TODO add your handling code here:
+        this.dispose();
+        HeadMgr.dispDashboardUI();
+    }
+    private void HomeB1MouseClicked(java.awt.event.MouseEvent evt) { 
+        this.dispose();
+        HeadMgr.dispSearchUI();
+    }
+    private void HomeB2MouseClicked(java.awt.event.MouseEvent evt) { 
+        this.dispose();
+        HeadMgr.dispEStoreUI();
+    }
+    
+    
     private void HomeB4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeB4MouseClicked
         // TODO add your handling code here:
         System.exit(0);
@@ -457,6 +473,7 @@ public class SellBookUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTextField3MouseClicked
     
+<<<<<<< Updated upstream
     private void HomeBMouseClicked(java.awt.event.MouseEvent evt) {                                   
         // TODO add your handling code here:
         this.dispose();
@@ -470,6 +487,9 @@ public class SellBookUI extends javax.swing.JFrame {
         this.dispose();
         HeadMgr.dispEStoreUI();
     }
+=======
+    
+>>>>>>> Stashed changes
     
     private void jTextField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField1MouseClicked
         String text=jTextField1.getText();
