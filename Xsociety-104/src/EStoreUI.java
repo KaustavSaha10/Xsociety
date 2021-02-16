@@ -37,8 +37,8 @@ public class EStoreUI extends javax.swing.JFrame {
         currentUser = ob3;
         initComponents();
         this.setTitle("EStoreUI - Kaustav Saha 104");
-        this.setLocation(100,100);
-        JButton [] btns = { HomeB,HomeB1,HomeB2,HomeB3,HomeB4};
+        HomeB2.setBackground(new Color(255,153,51));
+        JButton [] btns = { HomeB,HomeB1,HomeB3,HomeB4};
         for (JButton btn : btns){
             btn.setBackground(new Color(7,95,99));
             btn.setUI(new BasicButtonUI());
@@ -139,6 +139,11 @@ public class EStoreUI extends javax.swing.JFrame {
         HomeB3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/cog.png"))); // NOI18N
         HomeB3.setBorder(null);
         HomeB3.setPreferredSize(new java.awt.Dimension(90, 90));
+        HomeB3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HomeB3MouseClicked(evt);
+            }
+        });
 
         HomeB4.setBackground(new java.awt.Color(7, 95, 99));
         HomeB4.setForeground(new java.awt.Color(7, 95, 99));
@@ -333,6 +338,7 @@ public class EStoreUI extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void HomeB1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeB1MouseClicked
@@ -390,6 +396,8 @@ public class EStoreUI extends javax.swing.JFrame {
         if(sr!=-1){
             if(itemTypecb.getSelectedIndex()==0){
                 Book boughtB = SM.buyBook((lst.get(sr).split(",")[4]),(lst.get(sr).split(",")[1]));
+                if(boughtB!=null)
+                    ReceiptHash.setText("Transaction successful");
                 //TM = new TransactionManager(currentUser,UM.searchUser((lst.get(sr)).split(",")[4]) , boughtB);
                 //String hash = TM.generateReceipt();
                 //ReceiptHash.setText("Recipt Hash(Check Desktop)="+hash);
@@ -397,6 +405,8 @@ public class EStoreUI extends javax.swing.JFrame {
             }
             else{ //for itemTypecb.getSelectedIndex()==1
                 Equipment boughtE = SM.buyEquipment((lst.get(sr).split(",")[4]),(lst.get(sr).split(",")[1]));
+                if(boughtE!=null)
+                    ReceiptHash.setText("Transaction successful");
                 //TM = new TransactionManager(currentUser,UM.searchUser((lst.get(sr)).split(",")[4]) , boughtE);
                 //String hash = TM.generateReceipt();
                 //ReceiptHash.setText("Recipt Hash(Check Desktop)="+hash);
@@ -420,6 +430,12 @@ public class EStoreUI extends javax.swing.JFrame {
         this.dispose();
         HeadMgr.dispSellEquipmentUI();
     }//GEN-LAST:event_sellEqpBtnMouseClicked
+
+    private void HomeB3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeB3MouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+        HeadMgr.dispSettingsUI();
+    }//GEN-LAST:event_HomeB3MouseClicked
     public void setUID(){
         UIDLabel.setText("Buyer ID : "+HeadMgr.getUser().getUniqueid());
     }

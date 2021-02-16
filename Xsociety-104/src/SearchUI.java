@@ -5,6 +5,8 @@
  */
 
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -27,9 +29,9 @@ public class SearchUI extends javax.swing.JFrame {
         HeadMgr = ob;
         NM = ob1;
         initComponents();
-        this.setLocation(100,100);
         this.setTitle("EStoreUI - Kaustav Saha 104");
-        JButton [] btns = { HomeB5,HomeB6,HomeB7,HomeB8,HomeB9};
+        HomeB6.setBackground(new Color(255,153,51));
+        JButton [] btns = { HomeB5,HomeB7,HomeB8,HomeB9};
         for (JButton btn : btns){
             btn.setBackground(new Color(7,95,99));
             btn.setUI(new BasicButtonUI());
@@ -290,8 +292,9 @@ public class SearchUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
-
+        
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>                        
 
     private void jBsearchMouseClicked(java.awt.event.MouseEvent evt) {                                      
@@ -409,7 +412,8 @@ public class SearchUI extends javax.swing.JFrame {
         //new EStoreUI().setVisible(true);
     }     
     private void HomeB8MouseClicked(java.awt.event.MouseEvent evt) { 
-        System.exit(0);
+        this.dispose();
+        HeadMgr.dispSettingsUI();
     }
     
     /**
